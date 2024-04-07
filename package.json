@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "shadow-cljs watch app",
+    "unit:compile": "shadow-cljs watch test",
+    "unit": "vitest",
+    "unit:browser": "vitest --browser.provider=playwright --browser.name=chromium",
+    "unit:headless": "vitest --browser.provider=playwright --browser.name=chromium --browser.headless"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +17,10 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
     "@testing-library/user-event": "^14.5.2",
+    "@vitest/browser": "^1.4.0",
     "@vitest/ui": "^1.4.0",
     "jsdom": "^24.0.0",
+    "playwright": "^1.43.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "scheduler": "^0.23.0",
