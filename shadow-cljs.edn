@@ -1,0 +1,23 @@
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+ :dependencies
+ [
+  [funcool/promesa "11.0.678"]
+  [reagent "1.2.0"]
+  ]
+
+ :dev-http {3000 "public"}
+ :builds
+ {:app {:target :browser
+        :js-options {:entry-keys ["module" "browser" "main"]}
+        :modules {:main {:entries [core]}}}
+  :test {:target             :esm
+         :output-dir         "target/vitest/js"
+         :js-options {;; don't bundle any npm libs
+                      :js-provider :import}
+         :compiler-options {:infer-externs :auto}
+         :runtime :node
+         :modules {:main {:entries [reagent-test]}}
+         }}}
