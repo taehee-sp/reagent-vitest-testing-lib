@@ -6,13 +6,13 @@ install dependencies
 pnpm install
 ```
 
-shadow-cljs compile tests into `target/vitest/js` without esm dependencies. (see `shadow-cljs.edn`)
+compile tests in `src/test/reagent_test.cljs` into `target/vitest/js` by shadow-cljs. (see `shadow-cljs.edn`)
 
 ```sh
 pnpm unit:compile
 ```
 
-vitest watch and run compile output files.
+in another terminal, watch and run compile output by vitest.
 
 ```sh
 pnpm unit
